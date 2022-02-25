@@ -1,0 +1,248 @@
+:root {
+
+    --ff-primary: 'Barlow Semi Condensed', sans-serif;
+    --ff-secondary: 'Inter', sans-serif;
+
+    --fw-neutral: 500;
+    --fw-bold: 600;
+
+    --fs-primary: 0.8125rem;
+
+    /*
+    Note for text colors:
+    1. "Verified Graduate" has the same color as the person's name with 50% opacity
+    2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+    */
+    --clr-primary-mviolet: hsl(263, 55%, 52%);
+    --clr-primary-gblue: hsl(217, 19%, 35%);
+    --clr-primary-bblue: hsl(219, 29%, 14%);
+    --clr-primary-white: hsl(0, 0%, 100%);
+
+    --clr-secondary-lgray: hsl(0, 0%, 81%);
+    --clr-secondary-gblue: hsl(210, 46%, 95%);
+
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+/* set up the body */
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-primary);
+    font-weight: var(--fw-neutral);
+    background-color: var(--clr-secondary-gblue);
+}
+
+/* make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main__container {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2em;
+}
+
+.bg-daniel {
+    background-color: var(--clr-primary-mviolet);
+    grid-column: 1 / 3;
+    order: 1;
+}
+
+.bg-daniel img {
+    border: 2px solid rgb(173, 145, 214);
+}
+
+.bg-jonathan {
+    background-color: var(--clr-primary-gblue);
+    order: 2;
+}
+
+.bg-jeanette {
+    background-color: var(--clr-primary-white);
+    order: 4;
+    box-shadow: 2px 4px 43px -15px rgba(0,0,0,0.75);
+}
+
+.bg-kira {
+    background-color: var(--clr-primary-white);
+    order: 3;
+    grid-row: 1 / 3;
+    grid-column-start: 4;
+    box-shadow: 2px 4px 43px -15px rgba(0,0,0,0.75);
+}
+
+.bg-patrick {
+    background-color: var(--clr-primary-bblue);
+    order: 5;
+    grid-column: 2 / 4;
+}
+
+.bg-patrick img {
+    border: 2px solid var(--clr-primary-mviolet);
+}
+
+.main__container--item {
+    border-radius: .8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5em;
+    padding-top: 1em;
+}
+
+.container__header {
+    display: flex;
+    align-items: center;
+}
+
+.container__header img {
+    max-width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.container__header ul {
+    list-style: none;
+    padding-left: 1.5em;
+}
+
+.container__header ul li {
+    color: var(--clr-secondary-gblue);
+}
+
+.container__header ul li:nth-child(2) {
+    opacity: 50%;
+}
+
+.bg-kira ul li {
+    color: var(--clr-primary-bblue);
+}
+
+.bg-jeanette ul li {
+    color: var(--clr-primary-bblue);
+}
+
+.bg-kira p {
+    color: var(--clr-primary-bblue);
+}
+
+.bg-jeanette p {
+    color: var(--clr-primary-bblue);
+}
+
+.bg-kira h1 {
+    color: var(--clr-primary-bblue);
+}
+
+.bg-jeanette h1 {
+    color: var(--clr-primary-bblue);
+}
+
+.container__heading--text {
+    font-family: var(--ff-primary);
+    font-size: 1.3rem;
+    color: var(--clr-primary-white);
+    font-weight: var(--fw-bold);
+    
+}
+
+.container__main--text {
+    padding-top: 1.5em;
+    font-family: var(--ff-secondary);
+    color: var(--clr-secondary-gblue);
+    opacity: 70%;
+}
+
+@media screen and (max-width: 1300px) {
+
+    .bg-daniel {
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+    }
+
+    .bg-jonathan {
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
+    }
+
+    .bg-jeanette {
+        grid-column: 2 / 4;
+        grid-row: 3 / 4;
+    }
+    
+    .bg-patrick {
+        grid-column: 2 / 4;
+        grid-row: 4 / 5;
+    }
+
+    .bg-kira {
+        grid-column: 2 / 4;
+        grid-row: 5 / 6;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .bg-daniel {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+    }
+
+    .bg-jonathan {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+    }
+
+    .bg-jeanette {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+    }
+    
+    .bg-patrick {
+        grid-column: 1 / 5;
+        grid-row: 4 / 5;
+    }
+
+    .bg-kira {
+        grid-column: 1 / 5;
+        grid-row: 5 / 6;
+    }
+
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
